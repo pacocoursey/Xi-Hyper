@@ -1,0 +1,14 @@
+{
+  "name": "xi-hyper",
+  "version": "0.0.1",
+  "description": "minimal monochrome theme.",
+  "main": "index.js",
+  "repository": "",
+  "keywords": [],
+  "license": "MIT",
+  "scripts": {
+    "start": ""
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
