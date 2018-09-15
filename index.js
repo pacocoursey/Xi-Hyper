@@ -1,31 +1,16 @@
-const foregroundColor = '#495057';
-const backgroundColor = '#fff';
-const selectionColor = 'rgba(0, 0, 0, 0.1)';
-const black = '#212529';
-const red = '#868e96';
-const green = '#343a40';
-const yellow = '#495057';
-const blue = '#212529';
-const magenta = '#adb5bd';
-const cyan = '#dee2e6';
-const white = '#868e96';
-const lightBlack = '#343a40';
-const lightWhite = '#f1f3f5';
-const darkBlue = '#343a40';
-
 const white = '#fff';
 const black = '#000';
 const faded = 'rgba(0, 0, 0, 0.1)';
-const oc-gray-0 = '#f8f9fa';
-const oc-gray-1 = '#f1f3f5';
-const oc-gray-2 = '#e9ecef';
-const oc-gray-3 = '#dee2e6';
-const oc-gray-4 = '#ced4da';
-const oc-gray-5 = '#adb5bd';
-const oc-gray-6 = '#868e96';
-const oc-gray-7 = '#495057';
-const oc-gray-8 = '#343a40';
-const oc-gray-9 = '#212529';
+const ocGray0 = '#f8f9fa';
+const ocGray1 = '#f1f3f5';
+const ocGray2 = '#e9ecef';
+const ocGray3 = '#dee2e6';
+const ocGray4 = '#ced4da';
+const ocGray5 = '#adb5bd';
+const ocGray6 = '#868e96';
+const ocGray7 = '#495057';
+const ocGray8 = '#343a40';
+const ocGray9 = '#212529';
 
 exports.decorateBrowserOptions = defaults => Object.assign({}, defaults, {
   titleBarStyle: '',
@@ -34,74 +19,106 @@ exports.decorateBrowserOptions = defaults => Object.assign({}, defaults, {
 });
 
 exports.decorateConfig = config => Object.assign({}, config, {
-  backgroundColor,
-  foregroundColor,
-  selectionColor,
-  borderColor: darkBlue,
-  cursorColor: foregroundColor,
+  backgroundColor: white,
+  foregroundColor: ocGray7,
+  selectionColor: faded,
+  borderColor: white,
+  cursorColor: ocGray9,
   colors: {
-    black,
-    red,
-    green,
-    yellow,
-    blue,
-    magenta,
-    cyan,
-    white: lightWhite,
-    lightBlack,
-    lightRed: red,
-    lightGreen: green,
-    lightYellow: yellow,
-    lightBlue: blue,
-    lightMagenta: magenta,
-    lightCyan: cyan,
-    lightWhite: white,
+    black: ocGray8,
+    red: ocGray7,
+    green: ocGray6,
+    yellow: ocGray5,
+    blue: ocGray9,
+    magenta: ocGray4,
+    cyan: ocGray3,
+    white,
+    lightBlack: ocGray8,
+    lightRed: ocGray7,
+    lightGreen: ocGray6,
+    lightYellow: ocGray5,
+    lightBlue: ocGray9,
+    lightMagenta: ocGray4,
+    lightCyan: ocGray3,
+    lightWhite: ocGray0,
   },
   css: `
     ${config.css}
     .hyper_main {
       border: none !important;
     }
+
     .header_header {
-      color: ${foregroundColor};
+      color: ${ocGray9};
     }
+
     .header_windowHeaderWithBorder {
-      border-color: ${backgroundColor} !important;
+      border-color: ${white} !important;
     }
+
     .tabs_list {
-      border-bottom: 1px solid #e9ecef;
+      border-bottom: 1px solid ${ocGray2};
       margin-left: 0;
     }
+
     .tabs_borderShim {
-      border-color: #e9ecef !important;
+      border-color: ${ocGray2} !important;
     }
+
     .tab_tab {
       border: 0;
     }
+
     .tab_tab.tab_active {
-      background: ${backgroundColor};
-      color: ${foregroundColor};
-      transition: color 200ms;
+      background: ${white};
+      color: ${ocGray9};
     }
+
     .tab_tab:not(.tab_active) {
-      background: #f8f9fa;
-      color: ${cyan};
+      background: ${ocGray0};
+      color: ${ocGray3};
     }
+
     .tab_tab:not(.tab_active):hover {
-      color: ${foregroundColor};
-      transition: color 200ms;
+      color: ${ocGray9};
     }
+
     .tab_icon {
-      width: 15px;
-      height: 15px;
-      color: ${foregroundColor};
+      top: 9px;
+      width: 16px;
+      height: 16px;
+      color: ${ocGray9};
+      border-radius: 3px;
+      background-color: ${white};
     }
+
+    .tab_icon:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: ${ocGray7};
+      -webkit-mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5IiBoZWlnaHQ9IjkiIHZpZXdCb3g9IjAgMCA5IDkiPjxwb2x5Z29uIGZpbGw9IiMwMDAwMDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIgcG9pbnRzPSI0Ljk1IDQuMjQzIDguNDg1IC43MDcgNy43NzggMCA0LjI0MyAzLjUzNiAuNzA3IDAgMCAuNzA3IDMuNTM2IDQuMjQzIDAgNy43NzggLjcwNyA4LjQ4NSA0LjI0MyA0Ljk1IDcuNzc4IDguNDg1IDguNDg1IDcuNzc4Ii8+PC9zdmc+');
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: 9px;
+      -webkit-mask-position: center;
+      transition: background 150ms ease;
+    }
+
+    .tab_icon:hover {
+      background-color: ${ocGray2};
+    }
+
+    .tab_icon:hover::before {
+      background-color: ${ocGray9};
+    }
+
     .tab_shape {
-      width: 7px;
-      height: 7px;
+      display: none;
     }
+
     .splitpane_divider {
-      background-color: #dee2e6 !important;
+      background-color: ${ocGray3} !important;
     }
   `,
 });
