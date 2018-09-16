@@ -1,8 +1,8 @@
 const white = '#fff';
-const black = '#000';
+// const black = '#000';
 const faded = 'rgba(0, 0, 0, 0.1)';
 const ocGray0 = '#f8f9fa';
-const ocGray1 = '#f1f3f5';
+// const ocGray1 = '#f1f3f5';
 const ocGray2 = '#e9ecef';
 const ocGray3 = '#dee2e6';
 const ocGray4 = '#ced4da';
@@ -106,7 +106,7 @@ exports.decorateConfig = config => Object.assign({}, config, {
     }
 
     .tab_icon:hover {
-      background-color: ${ocGray2};
+      background-color: ${ocGray2} !important;
     }
 
     .tab_icon:hover::before {

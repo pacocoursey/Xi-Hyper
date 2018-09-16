@@ -1,10 +1,20 @@
 {
   "name": "xi-hyper",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "minimal monochrome theme.",
   "main": "index.js",
-  "repository": "",
-  "keywords": [],
+  "repository": "https://github.com/pacocoursey/Xi-Hyper.git",
+  "keywords": [
+    "xi",
+    "ui",
+    "apex",
+    "black",
+    "white",
+    "hyper",
+    "theme",
+    "grayscale",
+    "monochrome"
+  ],
   "license": "MIT",
   "scripts": {
     "start": ""
